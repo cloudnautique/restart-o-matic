@@ -1,0 +1,1 @@
+* * * * * /opt/restart_o_matic 2>&1 >> /var/log/restart_o_matic.log
