@@ -2,7 +2,7 @@
 
 
 if [ -f /opt/container_watchers ]; then
-    for container in $(</opt/container_watchers); do
+    for container in $(cat /opt/container_watchers| grep -v '^#'); do
         container_id=$(echo $container| cut -d'.' -f1)
         restart_hour=$(echo $container| cut -d'.' -f2|cut -d":" -f 1)
         restart_min=$(echo $container| cut -d'.' -f2|cut -d":" -f 2)
