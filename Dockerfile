@@ -1,4 +1,4 @@
-FROM rancher/docker-dind-base:v0.4.1
+FROM docker:1.11
 
 MAINTAINER Rancher Labs
 
@@ -12,4 +12,4 @@ RUN cd /var/spool/cron/crontabs && \
 
 COPY ./restart_o_matic /opt/
 
-CMD [ "cron", "-f", "-L", "15" ]
+CMD [ "crond", "-f", "-l", "4" ]
