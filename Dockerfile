@@ -3,6 +3,7 @@ FROM docker:1.11
 MAINTAINER Rancher Labs
 
 COPY ./crontabs /var/spool/cron/crontabs/
+RUN apk add --update bash && rm -rf /var/cache/apk/*
 
 # Crontab files need to be named after the user
 RUN cd /var/spool/cron/crontabs && \
